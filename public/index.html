@@ -6,12 +6,34 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- <script src="../src/assets/eb_widgets.js"></script> -->
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <!-- <div id="app"></div> -->
+    <vue-widget></vue-widget>
+    <button id="eventbrite-widget-modal-trigger-274103560127" type="button">Buy Tickets</button>
     <!-- built files will be auto injected -->
   </body>
 </html>
+
+<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script> 
+
+<!-- <script type="text/javascript">
+
+    var exampleCallback = function() {
+        console.log('Order complete!');
+    };
+
+    window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '274103560127',
+        modal: true,
+        modalTriggerElementId: 'eventbrite-widget-modal-trigger-274103560127',
+        onOrderComplete: exampleCallback
+    });
+
+
+</script> -->
