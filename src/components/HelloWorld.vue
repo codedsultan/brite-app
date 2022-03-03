@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-container">
+  <!-- <div class="flex-container grid-container"> -->
    
 <!--    
               <ul role="list" class="p-12 -mb-8">
@@ -20,11 +20,11 @@
 
             </ul>
       -->
-  <div>
-    <div class="card">
+  <!-- <div>
+       <div class="card">
       <div class="container">
-        <h3>{{events.data.events[eventlength-1].name.text}}</h3>
-          <button v-on:click="handleCheck(events.data.events[eventlength-1].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-1].id" type="button">Buy Tickets</button>
+        <h3>{{events.data.events[8].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-2].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
       </div>
     </div>     
   </div>
@@ -42,7 +42,27 @@
           <button v-on:click="handleCheck(events.data.events[eventlength-3].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
       </div>
     </div>  </div>
-  </div>
+  </div> -->
+  <div class="row">
+  <div class="column">    <div class="card">
+      <div class="container">
+        <h3>{{events.data.events[eventlength-1].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-1].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-1].id" type="button">Buy Tickets</button>
+      </div>
+    </div> </div>
+  <div class="column">    <div class="card">
+      <div class="container">
+        <h3>{{events.data.events[eventlength-2].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-2].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
+      </div>
+    </div> </div>
+  <div class="column">    <div class="card">
+      <div class="container">
+        <h3>{{events.data.events[eventlength-3].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-3].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-3].id" type="button">Buy Tickets</button>
+      </div>
+    </div> </div>
+</div>
 </template>
 
 
@@ -166,5 +186,43 @@ a {
 .flex-container {
   display: flex;
 }
+
+.grid-container {
+  display: grid;
+  column-gap: 50px;
+}
+
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  /* height: 300px; Should be removed. Only for demonstration */
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+
 </style>
 
