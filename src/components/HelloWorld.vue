@@ -204,7 +204,7 @@ a {
   /* display: flex; */
   /* width: 1200px; */
   /* margin:auto; */
-  position:absolute
+  /* position:absolute */
 }
 
 .grid-container {
