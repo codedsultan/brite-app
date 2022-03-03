@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="flex-container grid-container"> -->
+  <div class="flex-container grid-container">
    
 <!--    
               <ul role="list" class="p-12 -mb-8">
@@ -50,8 +50,10 @@
           <button v-on:click="handleCheck(events.data.events[eventlength-1].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-1].id" type="button">Buy Tickets</button>
       </div>
     </div> </div>
-  <div class="column">    <div class="card">
+  <div class="column">    
+    <div class="card">
       <div class="container">
+        <!-- <img src="../assets/logo.png" width="500" height="600"> -->
         <h3>{{events.data.events[eventlength-2].name.text}}</h3>
           <button v-on:click="handleCheck(events.data.events[eventlength-2].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
       </div>
@@ -62,6 +64,7 @@
           <button v-on:click="handleCheck(events.data.events[eventlength-3].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-3].id" type="button">Buy Tickets</button>
       </div>
     </div> </div>
+</div>
 </div>
 </template>
 
@@ -157,7 +160,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
+  background-color: azure;
   margin: 40px 0 0;
+  padding: 40px;
+  height: 60px;
 }
 ul {
   list-style-type: none;
@@ -174,17 +180,31 @@ a {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  background-image: url(../assets/logo.png);
+  background-size: contain;
+  /* background-size: auto; */
+  background-repeat: no-repeat;
+  height: 600px; 
+
+  
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .container {
-  padding: 2px 16px;
+  /* padding: 2px 16px; */
+   padding-top: 300px;
+  padding-top: auto;
+  padding-bottom: auto;
+
 }
 
 .flex-container {
-  display: flex;
+  /* display: flex; */
+  /* width: 1200px; */
+  /* margin:auto; */
+  position:absolute
 }
 
 .grid-container {
@@ -205,7 +225,8 @@ a {
   -ms-flex: 1;
   flex: 1;
   padding: 10px;
-  /* height: 300px; Should be removed. Only for demonstration */
+
+  /* Should be removed. Only for demonstration */
 }
 
 /* Style the footer */
@@ -216,13 +237,33 @@ a {
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
+@media  (max-width: 600px) {
   .row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
+  .card {
+    height: 300px; 
+  }
+
+  .container {
+  /* padding: 2px 16px; */
+   padding-top: 100px;
+  }
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
 
+button{
+  background-color: cadetblue;
+  padding:20px 40px;
+  font-size: large;
+  color:white;
+  border: none;
+  
+}
 </style>
 
