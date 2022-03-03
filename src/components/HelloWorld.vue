@@ -163,7 +163,7 @@ h3 {
   background-color: azure;
   margin: 40px 0 0;
   padding: 40px;
-  height: 60px;
+  /* height: 60px; */
 }
 ul {
   list-style-type: none;
@@ -181,7 +181,7 @@ a {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-image: url(../assets/logo.png);
-  background-size: contain;
+  background-size: cover;
   /* background-size: auto; */
   background-repeat: no-repeat;
   height: 600px; 
@@ -248,7 +248,7 @@ a {
 
   .container {
   /* padding: 2px 16px; */
-   padding-top: 100px;
+   padding-top: 50px;
   }
 }
 
