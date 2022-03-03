@@ -47,7 +47,7 @@
   <div class="column">    <div class="card">
       <div class="container">
         <h3>{{events.data.events[eventlength-1].name.text}}</h3>
-          <button v-on:click="handleCheck(events.data.events[eventlength-1].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-1].id" type="button">Buy Tickets</button>
+          <button v-on:click="handleCheck(events.data.events[eventlength-1].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-1].id" type="button">Get Tickets</button>
       </div>
     </div> </div>
   <div class="column">    
@@ -55,13 +55,13 @@
       <div class="container">
         <!-- <img src="../assets/logo.png" width="500" height="600"> -->
         <h3>{{events.data.events[eventlength-2].name.text}}</h3>
-          <button v-on:click="handleCheck(events.data.events[eventlength-2].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
+          <button v-on:click="handleCheck(events.data.events[eventlength-2].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Get Tickets</button>
       </div>
     </div> </div>
   <div class="column">    <div class="card">
       <div class="container">
         <h3>{{events.data.events[eventlength-3].name.text}}</h3>
-          <button v-on:click="handleCheck(events.data.events[eventlength-3].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-3].id" type="button">Buy Tickets</button>
+          <button v-on:click="handleCheck(events.data.events[eventlength-3].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-3].id" type="button">Get Tickets</button>
       </div>
     </div> </div>
 </div>
@@ -181,7 +181,8 @@ a {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-image: url(../assets/logo.png);
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
   /* background-size: auto; */
   background-repeat: no-repeat;
   height: 600px; 
