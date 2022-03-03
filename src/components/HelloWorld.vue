@@ -1,26 +1,47 @@
 <template>
-  <div>
+  <div class="flex-container">
    
-   
+<!--    
               <ul role="list" class="p-12 -mb-8">
 
                 <li  v-for="(event, key)  in events.data.events" :key='key'>
               <div class="card">
                 <div class="container">
-                  <h3>{{event.name.text}}</h3>
+                  <h3>{{event.name.text}}</h3> -->
                     <!-- <p>{{event.url}}</p> -->
-                     <a :href="event.url">View Event</a>
+                     <!-- <a :href="event.url">View Event</a> -->
                      <!-- Noscript content for added SEO -->
 <!-- <noscript><a href="https://www.eventbrite.co.uk/e/tedbree-ig-live-tickets-274103560127" rel="noopener noreferrer" target="_blank">Buy Tickets on Eventbrite</a></noscript> -->
 <!-- You can customize this button any way you like -->
-                          <button v-on:click="handleCheck(event.id)" :id="'eventbrite-widget-modal-trigger-'+event.id" type="button">Buy Tickets</button>
+                          <!-- <button v-on:click="handleCheck(event.id)" :id="'eventbrite-widget-modal-trigger-'+event.id" type="button">Buy Tickets</button>
                    </div>
                   </div>
                 </li>
 
             </ul>
-     
-
+      -->
+  <div>
+    <div class="card">
+      <div class="container">
+        <h3>{{events.data.events[eventlength-1].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-1].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-1].id" type="button">Buy Tickets</button>
+      </div>
+    </div>     
+  </div>
+  <div>    
+    <div class="card">
+      <div class="container">
+        <h3>{{events.data.events[8].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-2].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
+      </div>
+    </div>  </div>
+  <div>    
+    <div class="card">
+      <div class="container">
+        <h3>{{events.data.events[10].name.text}}</h3>
+          <button v-on:click="handleCheck(events.data.events[eventlength-3].id)" :id="'eventbrite-widget-modal-trigger-'+events.data.events[eventlength-2].id" type="button">Buy Tickets</button>
+      </div>
+    </div>  </div>
   </div>
 </template>
 
@@ -35,11 +56,12 @@ export default {
   },
     data(){
         return{
-            events: [],
+            events: {},
             error: null,
             response: null,
             pt:' 3R6GWLGHDXGP5GM3SN2UK5JQJFHOK4RKMOZXXTIG72NIAOZMTC',
             organizations:null,
+            eventlength:null
         //     exampleCallback : function() {
         // console.log('Order complete!');
         //   }
@@ -67,6 +89,7 @@ export default {
                   this.response = null;
               }else{
                 this.events = data
+                this.eventlength = this.events.data.events.length
               }
 
               
@@ -83,6 +106,16 @@ export default {
         // return getEvents()
       },
        
+  },
+  computed: {
+    // a computed getter
+    // eventlength: function () {
+    //   // `this` points to the vm instance
+    //   if(this.events.data.events){
+    //     return this.events.data.events.length()
+    //   }
+    //   return 0
+    // }
   },
     mounted(){
         this.handleFetch('144370389754');
@@ -128,6 +161,10 @@ a {
 }
 .container {
   padding: 2px 16px;
+}
+
+.flex-container {
+  display: flex;
 }
 </style>
 
