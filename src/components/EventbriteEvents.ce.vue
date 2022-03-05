@@ -71,11 +71,12 @@
 
 <script>
 import {getEvents, getOrganizations} from './../services/BriteService'
-import {o_O} from './../Helpers'
+import {loadExternalScript, o_O, unloadScript} from './../Helpers'
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    token:String,
+    org: String,
   },
     data(){
         return{
@@ -143,12 +144,16 @@ export default {
     mounted(){
         this.handleFetch('144370389754');
         this.handleFetchOrgs('FYE26YJH3ZU4ULOYNERD');
-          const s = document.createElement('script');
-          s.type = 'text/x-content';
-          s.src = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
-          document.body.appendChild(s);
-          
+          // const s = document.createElement('script');
+          // s.type = 'text/x-content';
+          // s.src = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
+          // document.body.appendChild(s);
+          loadExternalScript('https://www.eventbrite.com/static/widgets/eb_widgets.js', 'eventbrite')
           this.handleCheck()
+    }, 
+
+    beforeDestroy() {
+      unloadScript('https://www.eventbrite.com/static/widgets/eb_widgets.js')
     }
 
 
@@ -159,6 +164,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  /* margin-top: 60px; */
+  /* background-color: aquamarine; */
+}
+
 h3 {
   background-color: azure;
   margin: 40px 0 0;

@@ -15,19 +15,23 @@
       height: max-content ;
       /* width: max-content; */
     }</style>
+    <script src="//unpkg.com/vue"></script>
+    <!--Load the web component polyfill-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.2.0/webcomponents-loader.js"></script>
+    <script src="../dist/eventbrite-events.min.js"></script>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <!-- <div id="app"></div> -->
+    <eventbrite-events token="FYE26YJH3ZU4ULOYNERD" org="144370389754"></eventbrite-events>
     <!-- <vue-widget></vue-widget> -->
     <!-- <button id="eventbrite-widget-modal-trigger-274103560127" type="button">Buy Tickets</button> -->
     <!-- built files will be auto injected -->
   </body>
 </html>
 
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script> 
 
 <!-- <script type="text/javascript">
 

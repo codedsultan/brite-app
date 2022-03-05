@@ -1,11 +1,7 @@
 import Vue from 'vue'
-import App from './App.vue'
-// import vueCustomElement from 'vue-custom-element'
+import App from './components/EventbriteEvents.ce.vue'
+import wrap from '@vue/web-component-wrapper'
 
-Vue.config.productionTip = false
+const eventbriteEvents = wrap(Vue, App)
 
-// Vue.use(vueCustomElement)
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
-// Vue.customElement('vue-widget', App)
+window.customElements.define('eventbrite-events', eventbriteEvents)
